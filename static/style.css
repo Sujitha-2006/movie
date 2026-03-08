@@ -1,0 +1,11 @@
+body{
+    background:#111;
+    color:white;
+    font-family: Arial;
+}
+.container{
+    margin-top:50px;
+}
+input{
+    padding:10px;
+}

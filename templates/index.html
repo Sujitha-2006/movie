@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Telugu Movie Recommender</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="text-center">🎬 Telugu Movie Recommender</h1>
+
+<form method="POST">
+
+<input
+class="form-control"
+list="movies"
+name="movie"
+placeholder="Enter Telugu movie">
+
+<datalist id="movies">
+
+{% for movie in movies %}
+<option value="{{movie}}">
+{% endfor %}
+
+</datalist>
+
+<button class="btn btn-primary mt-3">
+Recommend
+</button>
+
+</form>
+
+<hr>
+
+<h3>Recommended Movies</h3>
+
+<ul>
+
+{% for movie in recs %}
+
+<li>{{movie}}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+</body>
+</html>
