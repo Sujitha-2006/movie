@@ -7,6 +7,8 @@ movies = pickle.load(open('movies.pkl','rb'))
 similarity = pickle.load(open('similarity.pkl','rb'))
 
 def recommend(movie):
+    if movie not in movies['title'].values:
+        return ["Movies not found"]
 
     index = movies[movies['title'] == movie].index[0]
 
